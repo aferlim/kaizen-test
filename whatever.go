@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	testpackage "github.com/aferlim/kaizen-test/pkg"
+)
 
 func main() {
 
@@ -22,6 +26,8 @@ func main() {
 	//fmt.Println(*c2)
 
 	var outId, outType, valid = Test()
+
+	fmt.Println(testpackage.Concat("asfg", "hjkl"))
 
 	fmt.Println(fmt.Sprint("%v %v", outId, outType, valid))
 }
@@ -50,6 +56,7 @@ func Test() (int, string, bool) {
 	//fmt.Printf("%s", car.Id)
 
 	return car.Id, car.Type, true
+
 }
 
 // Automovel is a vehicle
