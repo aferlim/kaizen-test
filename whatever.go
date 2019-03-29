@@ -18,7 +18,52 @@ func main() {
 	fmt.Println(b)
 	fmt.Println(c)
 
-	g, h, i := 2, false, "mah oi!"
+	//fmt.Println(c2)
+	//fmt.Println(*c2)
 
-	fmt.Println(g, h, i)
+	var outId, outType, valid = Test()
+
+	fmt.Println(fmt.Sprint("%v %v", outId, outType, valid))
 }
+
+//Test makes a test
+func Test() (int, string, bool) {
+
+	var id int = 1
+
+	var id2 *int = &id
+
+	var car = Automovel{Id: id, Type: "Mono motor"}
+
+	var _, tipo = car.Run(2, "")
+
+	fmt.Println(tipo)
+
+	fmt.Printf("%s", car.Id)
+
+	car.Id = id
+	id = 3
+
+	car.Id = *id2
+	*id2 = 9
+
+	//fmt.Printf("%s", car.Id)
+
+	return car.Id, car.Type, true
+}
+
+// Automovel is a vehicle
+type Automovel struct {
+	Id   int
+	Type string
+}
+
+//Run is running
+func (vehicle *Automovel) Run(velocity int, tipo string) (int, string) {
+
+	return (velocity * 3), "teste"
+}
+
+// private static int (this Automovel vehicle, int velocity) {
+
+// }
